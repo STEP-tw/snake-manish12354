@@ -1,9 +1,4 @@
-const stopSnake = function() {
-  clearInterval(animator);
-};
-
 const doesSnakeTouchRightEdge = function(snakeHead) {
-  console.log(snakeHead);
   let headPos = snakeHead.x;
   return headPos == 119;
 };
@@ -26,10 +21,4 @@ const doesSnakeTouchTopEdge = function(snakeHead) {
 const doesSnakeTouchEdge = function(snakeHead) {
   let gameStatus = doesSnakeTouchRightEdge(snakeHead) || doesSnakeTouchLeftEdge(snakeHead) || doesSnakeTouchBottomEdge(snakeHead) || doesSnakeTouchTopEdge(snakeHead);
   return gameStatus;
-};
-
-const stopGame = function(snakeHead) {
-  if (doesSnakeTouchEdge(snakeHead)) {
-    stopSnake();
-  }
 };
