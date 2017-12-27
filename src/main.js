@@ -17,6 +17,7 @@ const animateSnake=function() {
     createFood(numberOfRows,numberOfCols);
     drawFood(food);
   }
+  stopGame(head);
 }
 
 const changeSnakeDirection=function(event) {
@@ -60,7 +61,6 @@ const startGame=function() {
   createFood(numberOfRows,numberOfCols);
   drawFood(food);
   addKeyListener();
-  stopGame();
   animator=setInterval(animateSnake,140);
 }
 
