@@ -54,6 +54,10 @@ const createFood=function(numberOfRows,numberOfCols) {
   food=generateRandomPosition(numberOfCols,numberOfRows);
 }
 
+const stopGame = function(){
+  clearInterval(animator);
+}
+
 const startGame=function() {
   createSnake();
   drawGrids(numberOfRows,numberOfCols);
