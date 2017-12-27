@@ -46,16 +46,11 @@ const createSnake=function() {
   body.push(tail);
   body.push(tail.next());
   let head=tail.next().next();
-
   snake=new Snake(head,body);
 }
 
 const createFood=function(numberOfRows,numberOfCols) {
   food=generateRandomPosition(numberOfCols,numberOfRows);
-}
-
-const stopGame = function(){
-  clearInterval(animator);
 }
 
 const startGame=function() {
@@ -65,6 +60,7 @@ const startGame=function() {
   createFood(numberOfRows,numberOfCols);
   drawFood(food);
   addKeyListener();
+  stopGame();
   animator=setInterval(animateSnake,140);
 }
 
