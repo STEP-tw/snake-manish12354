@@ -17,7 +17,6 @@ const animateSnake=function() {
     createFood(numberOfRows,numberOfCols);
     drawFood(food);
   }
-  stopGame(head);
 }
 
 const changeSnakeDirection=function(event) {
@@ -50,6 +49,11 @@ const createSnake=function() {
   snake=new Snake(head,body);
 }
 
+const moveSnake = function(){
+  animateSnake();
+  stopGame();
+}
+
 const createFood=function(numberOfRows,numberOfCols) {
   food=generateRandomPosition(numberOfCols,numberOfRows);
 }
@@ -61,7 +65,7 @@ const startGame=function() {
   createFood(numberOfRows,numberOfCols);
   drawFood(food);
   addKeyListener();
-  animator=setInterval(animateSnake,140);
+  animator=setInterval(moveSnake,140);
 }
 
 window.onload=startGame;

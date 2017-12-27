@@ -18,7 +18,11 @@ const doesSnakeTouchTopEdge = function(snakeHead) {
   return headPos == 0;
 };
 
-const doesSnakeTouchEdge = function(snakeHead) {
+// const doesSnakeTouchItsBody = function(head,body){
+//
+// }
+
+const getGameStatus = function(snakeHead) {
   let gameStatus = doesSnakeTouchRightEdge(snakeHead) || doesSnakeTouchLeftEdge(snakeHead) || doesSnakeTouchBottomEdge(snakeHead) || doesSnakeTouchTopEdge(snakeHead);
   return gameStatus;
 };

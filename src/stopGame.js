@@ -2,8 +2,9 @@ const stopSnake = function() {
   clearInterval(animator);
 };
 
-const stopGame = function(snakeHead) {
-  if (doesSnakeTouchEdge(snakeHead)) {
+const stopGame = function() {
+  let head = snake.getHead();
+  if (getGameStatus(head)) {
     stopSnake();
   }
 };
