@@ -9,7 +9,6 @@ const hitsHorizontalEdge = function(snakeHead) {
 };
 
 const getGameStatus = function(snakeHead) {
-  console.log(snake.hasEatenItself());
-  let gameStatus = hitsVerticalEdge(snakeHead) || hitsHorizontalEdge(snakeHead);
+  let gameStatus = hitsVerticalEdge(snakeHead) || hitsHorizontalEdge(snakeHead)||snake.hasEatenItself();
   return gameStatus;
 };
