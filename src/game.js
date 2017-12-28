@@ -3,6 +3,7 @@ const Game = function(numberOfRows, numberOfColumns) {
   this.columns = numberOfColumns;
   this.snake = {};
   this.food = {};
+  this.score = 0;
 };
 
 Game.prototype.addSnake = function(snake) {
@@ -21,9 +22,17 @@ Game.prototype.createFood = function() {
 
 Game.prototype.giveFood = function() {
   return this.food;
-}
+};
 
 Game.prototype.stop = function() {
   clearInterval(animator);
   showFinishMessage();
+};
+
+Game.prototype.updateScore = function(increment){
+  this.score+=increment;
+};
+
+Game.prototype.giveScore = function(){
+  return this.score;
 };

@@ -23,9 +23,14 @@ const addRestartButton = function() {
 
 const showFinishMessage = function() {
   let messageField = document.getElementById("gameOverMsg");
-  messageField.innerText = "Game over !!\n Your score is ";
+  messageField.innerText = `Game over !!\n Your score is ${game.giveScore()}`;
   addRestartButton();
 };
+
+const showScore = function(){
+  let scoreId = document.getElementById("score");
+  scoreId.innerText = `score : ${game.giveScore()}`;
+}
 
 const paintCell = function(pos, color) {
   let cell = document.getElementById(pos.getCoord().join("_"));

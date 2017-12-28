@@ -5,6 +5,7 @@ let animator = undefined;
 
 
 const animateSnake = function() {
+  let increment = 5;
   let oldHead = game.snake.getHead();
   let oldTail = game.snake.move();
   let head = game.snake.getHead();
@@ -12,6 +13,7 @@ const animateSnake = function() {
   unpaintSnake(oldTail);
   paintHead(head);
   if (head.isSameCoordAs(game.giveFood())) {
+    game.updateScore(increment);
     game.snake.grow();
     game.createFood();
     drawFood(game.giveFood());
@@ -50,10 +52,11 @@ const createSnake = function() {
 
 const moveSnake = function() {
   animateSnake();
+  showScore();
   if (game.isOver()) {
     game.stop();
   }
-}
+};
 
 const startGame = function() {
   createSnake();

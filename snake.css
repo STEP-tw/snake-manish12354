@@ -39,3 +39,13 @@
   margin-top: 20%;
   margin-left: 33%;
 }
+
+#score{
+  margin-left: 45%;
+  margin-top: 10px;
+  font-weight: bold;
+  text-align: center;
+  border: 2px solid black;
+  width: 150px;
+  border-radius: 5px;
+}
