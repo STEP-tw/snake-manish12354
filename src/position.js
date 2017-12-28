@@ -46,8 +46,8 @@ Position.prototype.getCoord = function() {
 Position.prototype.hasCollided = function(maxCoords) {
   let maxX = maxCoords[0];
   let maxY = maxCoords[1];
-  let hitsToVerticalEdge = this.x >= maxX || this.x <= 0;
-  let hitsToHorizontalEdge = this.y >= maxY || this.y <= 0;
+  let hitsToVerticalEdge = this.x >= maxX || this.x <= -1;
+  let hitsToHorizontalEdge = this.y >= maxY || this.y <= -1;
   let status = hitsToVerticalEdge || hitsToHorizontalEdge;
   return status;
 };
