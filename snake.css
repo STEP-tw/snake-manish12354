@@ -27,9 +27,15 @@
 
 #gameOverMsg{
   text-align: center;
-  visibility: hidden;
-  position: relative;
   font-weight: bold;
-  margin-top: 10px;
+  margin-top: 20%;
+  margin-left: 32%;
   color: blue;
+  position: absolute;
+}
+
+#restartButton{
+  position: absolute;
+  margin-top: 20%;
+  margin-left: 33%;
 }

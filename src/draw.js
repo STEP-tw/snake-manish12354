@@ -1,47 +1,57 @@
-const drawGrids=function(numberOfRows,numberOfCols) {
-  let grid=document.getElementById("grid");
+const drawGrids = function(numberOfRows, numberOfCols) {
+  let grid = document.getElementById("grid");
   for (var i = 0; i < numberOfRows; i++) {
-    let row=document.createElement("tr");
+    let row = document.createElement("tr");
     for (var j = 0; j < numberOfCols; j++) {
-      let col=document.createElement("td");
-      col.id=`${j}_${i}`;
+      let col = document.createElement("td");
+      col.id = `${j}_${i}`;
       row.appendChild(col);
     }
     grid.appendChild(row);
   }
-}
-
-const showFinishMessage = function(){
-  let messageField = document.getElementById("gameOverMsg");
-  messageField.innerText ="Game over !!\n Your score is ";
-  messageField.style.visibility="visible";
 };
 
-const paintCell=function(pos,color) {
-  let cell=document.getElementById(pos.getCoord().join("_"));
-  if(cell)
-    cell.className=color;
-}
+const restart = function() {
+  location.reload();
+};
 
-const paintBody=function(pos) {
-  paintCell(pos,"snake");
-}
+const addRestartButton = function() {
+  let buttonId = document.getElementById("restartButton");
+  buttonId.innerHTML = "<br><br><button>Restart ??</button>";
+  buttonId.addEventListener("click", restart);
+};
 
-const paintHead=function(pos) {
-  paintCell(pos,"snake_head");
-}
+const showFinishMessage = function() {
+  let messageField = document.getElementById("gameOverMsg");
+  messageField.innerText = "Game over !!\n Your score is ";
+  addRestartButton();
+};
 
-const unpaintSnake=function(pos) {
-  paintCell(pos,"");
-}
+const paintCell = function(pos, color) {
+  let cell = document.getElementById(pos.getCoord().join("_"));
+  if (cell)
+    cell.className = color;
+};
 
-const drawSnake=function(snake) {
-  snake.getBody().forEach(function(pos){
+const paintBody = function(pos) {
+  paintCell(pos, "snake");
+};
+
+const paintHead = function(pos) {
+  paintCell(pos, "snake_head");
+};
+
+const unpaintSnake = function(pos) {
+  paintCell(pos, "");
+};
+
+const drawSnake = function(snake) {
+  snake.getBody().forEach(function(pos) {
     paintBody(pos);
   });
   paintHead(snake.getHead());
-}
+};
 
-const drawFood=function(food) {
-  paintCell(food,"food");
-}
+const drawFood = function(food) {
+  paintCell(food, "food");
+};
