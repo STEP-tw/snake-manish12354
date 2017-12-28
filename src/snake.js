@@ -30,6 +30,6 @@ Snake.prototype={
     })
   },
   hasCollidedWithWall: function(maxCoords) {
-    this.head.hasCollided(maxCoords);
+    return this.head.hasCollided(maxCoords);
   }
 }

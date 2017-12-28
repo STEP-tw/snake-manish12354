@@ -48,7 +48,8 @@ Position.prototype.hasCollided = function(maxCoords) {
   let maxY = maxCoords[1];
   let hitsToVerticalEdge = this.x >= maxX || this.x <= 0;
   let hitsToHorizontalEdge = this.y >= maxY || this.y <= 0;
-  return hitsToVerticalEdge || hitsToHorizontalEdge;
+  let status = hitsToVerticalEdge || hitsToHorizontalEdge;
+  return status;
 };
 
 const generateRandomPosition = function(maxX, maxY) {

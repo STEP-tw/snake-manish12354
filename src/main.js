@@ -1,5 +1,4 @@
 let snake=undefined;
-// let food=undefined;
 let numberOfRows=60;
 let numberOfCols=120;
 
@@ -56,12 +55,7 @@ const moveSnake = function(){
   if (game.isOver()) {
     game.stop();
   }
-  // stopGame();
 }
-
-// const createFood=function(numberOfRows,numberOfCols) {
-//   food=generateRandomPosition(numberOfCols,numberOfRows);
-// }
 
 const startGame=function() {
   createSnake();
@@ -69,8 +63,6 @@ const startGame=function() {
   drawGrids(numberOfRows,numberOfCols);
   drawSnake(game.snake);
   game.createFood(numberOfRows,numberOfCols);
-  // console.log(food);
-  // createFood(numberOfRows,numberOfCols);
   drawFood(game.food);
   addKeyListener();
   animator=setInterval(moveSnake,140);
