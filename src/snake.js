@@ -28,5 +28,8 @@ Snake.prototype={
     return this.body.some((shell) => {
       return shell.isSameCoordAs(this.head);
     })
+  },
+  hasCollidedWithWall: function(maxCoords) {
+    this.head.hasCollided(maxCoords);
   }
 }
