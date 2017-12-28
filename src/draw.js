@@ -18,7 +18,7 @@ const restart = function() {
 const addRestartButton = function() {
   let buttonId = document.getElementById("restartButton");
   buttonId.innerHTML = "<br><br><button>Restart ??</button>";
-  buttonId.addEventListener("click", restart);
+  buttonId.lastElementChild.addEventListener("click", restart);
 };
 
 const showFinishMessage = function() {
@@ -27,7 +27,7 @@ const showFinishMessage = function() {
   addRestartButton();
 };
 
-const showScore = function(){
+const showScore = function() {
   let scoreId = document.getElementById("score");
   scoreId.innerText = `score : ${game.giveScore()}`;
 }

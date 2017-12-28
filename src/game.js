@@ -29,10 +29,10 @@ Game.prototype.stop = function() {
   showFinishMessage();
 };
 
-Game.prototype.updateScore = function(increment){
-  this.score+=increment;
+Game.prototype.updateScore = function(increment) {
+  this.score += increment;
 };
 
-Game.prototype.giveScore = function(){
+Game.prototype.giveScore = function() {
   return this.score;
 };
