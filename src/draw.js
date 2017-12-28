@@ -11,6 +11,12 @@ const drawGrids=function(numberOfRows,numberOfCols) {
   }
 }
 
+const showFinishMessage = function(){
+  let messageField = document.getElementById("gameOverMsg");
+  messageField.innerText ="Game over !!\n Your score is ";
+  messageField.style.visibility="visible";
+};
+
 const paintCell=function(pos,color) {
   let cell=document.getElementById(pos.getCoord().join("_"));
   if(cell)

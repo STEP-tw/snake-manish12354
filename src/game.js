@@ -25,4 +25,5 @@ Game.prototype.giveFood = function() {
 
 Game.prototype.stop = function() {
   clearInterval(animator);
+  showFinishMessage();
 };

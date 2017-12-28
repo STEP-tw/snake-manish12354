@@ -24,3 +24,12 @@
   background-color: blue;
   border-radius: 50%;
 }
+
+#gameOverMsg{
+  text-align: center;
+  visibility: hidden;
+  position: relative;
+  font-weight: bold;
+  margin-top: 10px;
+  color: blue;
+}
