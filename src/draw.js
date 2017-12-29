@@ -12,6 +12,8 @@ const drawGrids = function(numberOfRows, numberOfCols) {
 };
 
 const restart = function() {
+  // game.resetScore();
+  // setInterval(moveSnake, 140);
   location.reload();
 };
 
@@ -23,13 +25,13 @@ const addRestartButton = function() {
 
 const showFinishMessage = function() {
   let messageField = document.getElementById("gameOverMsg");
-  messageField.innerText = `Game over !!\n Your score is ${game.giveScore()}`;
+  messageField.innerText = `Game over !!\n Your score is ${game.getScore()}`;
   addRestartButton();
 };
 
 const showScore = function() {
   let scoreId = document.getElementById("score");
-  scoreId.innerText = `score : ${game.giveScore()}`;
+  scoreId.innerText = `score : ${game.getScore()}`;
 }
 
 const paintCell = function(pos, color) {

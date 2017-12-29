@@ -20,7 +20,7 @@ Game.prototype.createFood = function() {
   this.food = generateRandomPosition(this.columns, this.rows);
 };
 
-Game.prototype.giveFood = function() {
+Game.prototype.getFood = function() {
   return this.food;
 };
 
@@ -33,6 +33,10 @@ Game.prototype.updateScore = function(increment) {
   this.score += increment;
 };
 
-Game.prototype.giveScore = function() {
+Game.prototype.getScore = function() {
   return this.score;
 };
+
+Game.prototype.resetScore = function() {
+  this.score = 0;
+}
